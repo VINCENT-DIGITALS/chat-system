@@ -1,0 +1,249 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ------------------------------------------------------------------ */
+/* Design tokens: original palette + theme modes                        */
+/*   data-theme="dark"      — default, dark mode                       */
+/*   data-theme="near-black"— OLED-friendly very dark                  */
+/*   data-theme="soft-gray" — neutral mid-dark                         */
+/*   data-theme="light"     — light mode                               */
+/*   data-theme="custom"    — values driven by inline CSS vars         */
+/* `data-theme="system"` resolves to light/dark at runtime via JS.     */
+/*                                                                     */
+/* Brand palette is original (deep teal + warm violet accent).         */
+/* It is NOT Discord Blurple and is not part of the Discord palette.   */
+/* ------------------------------------------------------------------ */
+
+:root {
+  --app-msg-font-size: 1rem;
+  --app-msg-line-height: 1.375rem;
+  --app-row-gap: 1rem;
+  --app-row-pad-y: 2px;
+
+  /* Brand defaults — original colors (override per theme below) */
+  --app-brand:        90  120 220;   /* dusk indigo (#5a78dc) — distinctly not Blurple #5865f2 */
+  --app-brand-hover:  74  100 196;
+  --app-brand-active: 60  85  170;
+
+  --app-link:    61 175 207;   /* muted cyan, not Discord link */
+  --app-success: 60 168 110;
+  --app-success-dark: 32  98  60;
+  --app-warning: 232 178  64;
+  --app-danger:  228  82  82;
+
+  --app-presence-online:  60 168 110;
+  --app-presence-idle:    232 178  64;
+  --app-presence-dnd:     228  82  82;
+  --app-presence-offline: 130 134 142;
+}
+
+/* DARK (default) — original dark palette, warmer than Discord's */
+:root,
+[data-theme="dark"] {
+  --app-surface-950: 22 23 28;
+  --app-surface-900: 32 34 42;
+  --app-surface-850: 38 40 49;
+  --app-surface-800: 44 46 56;
+  --app-surface-secondary-alt: 36 38 47;
+  --app-surface-floating: 16 17 21;
+  --app-surface-700: 58 61 73;
+  --app-surface-600: 68 71 84;
+
+  --app-text-strong: 235 237 242;
+  --app-text-soft:   182 187 196;
+  --app-text:        220 223 230;
+  --app-interactive: 175 181 192;
+  --app-interactive-hover:  220 223 230;
+  --app-interactive-active: 255 255 255;
+  --app-muted:   145 152 165;
+  --app-channel: 130 138 152;
+  --app-divider: 60 64 76;
+}
+
+/* NEAR-BLACK — OLED / power-saving mode */
+[data-theme="near-black"] {
+  --app-surface-950: 0 0 0;
+  --app-surface-900: 8 9 12;
+  --app-surface-850: 12 13 17;
+  --app-surface-800: 16 18 22;
+  --app-surface-secondary-alt: 12 13 17;
+  --app-surface-floating: 0 0 0;
+  --app-surface-700: 28 30 36;
+  --app-surface-600: 40 42 48;
+
+  --app-text-strong: 240 240 244;
+  --app-text-soft:   180 184 192;
+  --app-text:        220 220 224;
+  --app-interactive: 170 175 184;
+  --app-interactive-hover:  220 220 224;
+  --app-interactive-active: 255 255 255;
+  --app-muted:   140 145 155;
+  --app-channel: 124 130 142;
+  --app-divider: 28 30 36;
+}
+
+/* SOFT-GRAY — mid-dark neutral */
+[data-theme="soft-gray"] {
+  --app-surface-950: 42 45 52;
+  --app-surface-900: 54 58 66;
+  --app-surface-850: 60 64 72;
+  --app-surface-800: 66 70 80;
+  --app-surface-secondary-alt: 58 62 70;
+  --app-surface-floating: 34 36 42;
+  --app-surface-700: 82 88 100;
+  --app-surface-600: 96 102 116;
+
+  --app-text-strong: 240 242 246;
+  --app-text-soft:   200 206 216;
+  --app-text:        228 232 238;
+  --app-interactive: 195 200 210;
+  --app-interactive-hover:  228 232 238;
+  --app-interactive-active: 255 255 255;
+  --app-muted:   162 170 182;
+  --app-channel: 150 158 172;
+  --app-divider: 92 98 110;
+}
+
+/* LIGHT */
+[data-theme="light"] {
+  --app-surface-950: 232 234 240;   /* server rail */
+  --app-surface-900: 244 246 250;   /* channel sidebar */
+  --app-surface-850: 248 249 252;
+  --app-surface-800: 255 255 255;   /* chat area */
+  --app-surface-secondary-alt: 240 242 246;
+  --app-surface-floating: 255 255 255;
+  --app-surface-700: 222 226 234;
+  --app-surface-600: 210 214 224;
+
+  --app-text-strong: 27 31 40;
+  --app-text-soft:   77 86 102;
+  --app-text:        45 52 64;
+  --app-interactive: 77 86 102;
+  --app-interactive-hover:  27 31 40;
+  --app-interactive-active: 12 14 20;
+  --app-muted:   118 128 144;
+  --app-channel: 108 118 134;
+  --app-divider: 220 224 232;
+
+  --app-link:    32 130 175;
+}
+
+html, body, #root { height: 100%; }
+
+html, body {
+  margin: 0;
+  background-color: rgb(var(--app-surface-950));
+  color: rgb(var(--app-text));
+  font-family: 'Inter', 'Noto Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  letter-spacing: -0.005em;
+}
+
+* { -webkit-tap-highlight-color: transparent; }
+input, textarea, button, select { font: inherit; letter-spacing: inherit; }
+button { cursor: pointer; }
+button:disabled { cursor: not-allowed; }
+
+/* UI density modes — multiplier on row padding */
+[data-density="compact"]  { --app-row-pad-y: 0px; --app-row-gap: 0.5rem; }
+[data-density="default"]  { --app-row-pad-y: 2px; --app-row-gap: 1rem; }
+[data-density="spacious"] { --app-row-pad-y: 6px; --app-row-gap: 1.25rem; }
+
+/* Message display mode */
+[data-msg-mode="compact"] { --app-msg-font-size: 0.9375rem; --app-msg-line-height: 1.25rem; }
+[data-msg-mode="default"] { --app-msg-font-size: 1rem;       --app-msg-line-height: 1.375rem; }
+
+.press-feedback {
+  transition: transform 80ms cubic-bezier(0.4, 0, 0.2, 1), background-color 100ms;
+}
+.press-feedback:active:not(:disabled) {
+  transform: translateY(1px) scale(0.98);
+}
+
+.row-hover {
+  transition: background-color 80ms ease, color 80ms ease;
+}
+
+::-webkit-scrollbar { width: 8px; height: 8px; }
+::-webkit-scrollbar-track { background: transparent; border-radius: 4px; }
+::-webkit-scrollbar-thumb {
+  background: rgb(var(--app-surface-950));
+  border-radius: 4px;
+  border: 2px solid transparent;
+  background-clip: padding-box;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgb(var(--app-surface-900));
+  background-clip: padding-box;
+  border: 2px solid transparent;
+}
+.scrollbar-thin::-webkit-scrollbar { width: 8px; }
+.scrollbar-thin::-webkit-scrollbar-thumb {
+  background: rgb(var(--app-surface-950) / 0.6);
+  background-clip: padding-box;
+  border: 2px solid transparent;
+}
+.scrollbar-none::-webkit-scrollbar { display: none; }
+.scrollbar-none { scrollbar-width: none; }
+
+::selection { background: rgb(var(--app-brand) / 0.4); color: #fff; }
+
+:focus { outline: none; }
+.ring-focus:focus-visible {
+  box-shadow: 0 0 0 2px rgb(var(--app-brand) / 0.65);
+  border-radius: 4px;
+}
+
+.skeleton {
+  background: linear-gradient(90deg,
+    rgb(var(--app-surface-900)) 0%,
+    rgb(var(--app-surface-700)) 50%,
+    rgb(var(--app-surface-900)) 100%);
+  background-size: 200% 100%;
+  animation: shimmer 1.6s linear infinite;
+  border-radius: 6px;
+}
+@keyframes shimmer {
+  0%   { background-position: -200% 0; }
+  100% { background-position:  200% 0; }
+}
+
+.no-drag { user-select: none; }
+.text-balance { text-wrap: balance; }
+kbd {
+  font-family: 'Inter', system-ui, sans-serif;
+  font-size: 0.7rem;
+  padding: 1px 4px;
+  background: rgb(var(--app-surface-900));
+  border: 1px solid rgb(var(--app-surface-950));
+  border-bottom-width: 2px;
+  border-radius: 3px;
+  color: rgb(var(--app-text-soft));
+}
+
+/* Server-rail pill indicator (original style) */
+.server-pill {
+  position: absolute;
+  left: -16px;
+  top: 50%;
+  transform: translateY(-50%) scaleY(0);
+  width: 6px;
+  height: 40px;
+  margin-left: 12px;
+  background: rgb(var(--app-interactive-active));
+  border-radius: 0 4px 4px 0;
+  transform-origin: center;
+  transition: transform 200ms cubic-bezier(0.4, 0, 0.2, 1), height 200ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.server-pill.hovered { transform: translateY(-50%) scaleY(0.4); }
+.server-pill.active  { transform: translateY(-50%) scaleY(1); }
+
+.has-tooltip:hover .tooltip,
+.has-tooltip:focus-within .tooltip {
+  opacity: 1;
+  transform: translateY(0) translateX(0);
+  transition-delay: 200ms;
+}

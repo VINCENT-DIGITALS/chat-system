@@ -1,0 +1,88 @@
+/* Re-skin @livekit/components-react to the app's original palette, using
+   the same CSS variables the rest of the app uses. The values resolve
+   per-theme (light / dark / soft-gray / near-black / custom). */
+
+[data-lk-theme='default'] {
+  --lk-bg:  rgb(var(--app-surface-800));
+  --lk-bg2: rgb(var(--app-surface-900));
+  --lk-bg3: rgb(var(--app-surface-950));
+  --lk-bg4: rgb(var(--app-surface-secondary-alt));
+  --lk-bg5: rgb(var(--app-surface-700));
+  --lk-fg:  rgb(var(--app-text-strong));
+  --lk-fg2: rgb(var(--app-text));
+  --lk-fg3: rgb(var(--app-text-soft));
+  --lk-fg4: rgb(var(--app-muted));
+  --lk-accent-bg: rgb(var(--app-brand));
+  --lk-accent2:   rgb(var(--app-brand-hover));
+  --lk-accent3:   rgb(var(--app-brand-active));
+  --lk-accent-fg: #ffffff;
+  --lk-danger-bg: rgb(var(--app-danger));
+  --lk-danger-fg: #ffffff;
+  --lk-success-bg: rgb(var(--app-success));
+  --lk-success-fg: #ffffff;
+  --lk-control-bg: rgb(var(--app-surface-700));
+  --lk-control-fg: rgb(var(--app-text));
+  --lk-control-active-bg: rgb(var(--app-brand));
+  --lk-control-hover-bg:  rgb(var(--app-surface-600));
+  --lk-border-color: rgb(var(--app-divider));
+  --lk-grid-gap: 8px;
+}
+
+.lk-control-bar {
+  background: transparent;
+  padding: 8px 4px;
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+}
+.lk-control-bar .lk-button {
+  border-radius: 999px;
+  background: rgb(var(--app-surface-700));
+  color: rgb(var(--app-text));
+  font-weight: 600;
+  font-size: 13px;
+  padding: 8px 14px;
+  transition: background-color 80ms ease, transform 80ms ease;
+}
+.lk-control-bar .lk-button:hover {
+  background: rgb(var(--app-surface-600));
+  color: rgb(var(--app-interactive-active));
+}
+.lk-control-bar .lk-button[data-lk-source='microphone'][aria-pressed='true'],
+.lk-control-bar .lk-button[data-lk-source='camera'][aria-pressed='true'] {
+  background: rgb(var(--app-brand));
+  color: white;
+}
+.lk-control-bar .lk-button[data-lk-source='microphone'][aria-pressed='false'],
+.lk-control-bar .lk-button[data-lk-source='camera'][aria-pressed='false'] {
+  background: rgb(var(--app-danger) / 0.20);
+  color: rgb(var(--app-danger));
+}
+.lk-control-bar .lk-disconnect-button,
+.lk-control-bar .lk-button.lk-danger,
+.lk-control-bar .lk-button[data-lk-action='leave'] {
+  background: rgb(var(--app-danger));
+  color: #ffffff;
+}
+.lk-control-bar .lk-disconnect-button:hover {
+  background: rgb(var(--app-danger) / 0.85);
+}
+.lk-control-bar .lk-button:active {
+  transform: translateY(1px) scale(0.98);
+}
+
+/* Participant tile in VideoConference */
+.lk-participant-tile {
+  border-radius: 8px;
+  overflow: hidden;
+  background: rgb(var(--app-surface-950));
+}
+.lk-participant-tile.lk-speaking {
+  outline: 2px solid rgb(var(--app-success));
+  outline-offset: -2px;
+}
+.lk-participant-metadata {
+  background: rgba(0, 0, 0, 0.45);
+  border-radius: 4px;
+  font-size: 12px;
+}

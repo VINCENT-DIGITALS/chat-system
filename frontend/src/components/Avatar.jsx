@@ -4,12 +4,13 @@ const statusColor = {
   online: 'bg-app-green',
   idle: 'bg-app-yellow',
   dnd: 'bg-app-red',
-  offline: 'bg-[#80848e]',
+  offline: 'bg-app-offline',
 };
 
 function colorFor(name) {
-  // app-style stable palette per identity
-  const palette = ['#5865f2', '#23a55a', '#f0b232', '#f23f43', '#9b59b6', '#1abc9c', '#e91e63', '#11806a'];
+  // Stable monochrome palette per identity — graded grays, all dark enough
+  // to keep white initials legible.
+  const palette = ['#5c5f66', '#46484e', '#6e7178', '#3a3c42', '#7a7d84', '#52545a', '#646770', '#2f3136'];
   if (!name) return palette[0];
   let h = 0;
   for (let i = 0; i < name.length; i++) h = (h * 31 + name.charCodeAt(i)) >>> 0;
@@ -47,7 +48,7 @@ export default function Avatar({ name, src, size = 36, status }) {
           style={{
             width: dot,
             height: dot,
-            boxShadow: `0 0 0 ${ringSize}px #2b2d31`,
+            boxShadow: `0 0 0 ${ringSize}px rgb(var(--app-surface-900))`,
           }}
         />
       )}

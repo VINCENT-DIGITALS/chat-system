@@ -269,7 +269,7 @@ export default function ChannelSidebar() {
       </nav>
 
       {/* User bar */}
-      <div className="h-[52px] px-2 bg-[#232428] flex items-center justify-between gap-0.5 shrink-0">
+      <div className="h-[52px] px-2 bg-app-950 border-t border-app-divider flex items-center justify-between gap-0.5 shrink-0">
         <button
           onClick={() => navigate('/settings')}
           className="flex items-center gap-2 min-w-0 px-1 py-1 rounded hover:bg-app-700/60 row-hover flex-1 press-feedback"
@@ -358,7 +358,7 @@ export default function ChannelSidebar() {
                         'flex flex-col items-center gap-1 py-3 rounded border transition-colors press-feedback',
                         type === v
                           ? 'border-app-500 bg-app-500/15 text-app-interactive-active'
-                          : 'border-app-divider bg-[#1e1f22] text-app-interactive hover:text-app-interactive-active hover:border-app-channel'
+                          : 'border-app-divider bg-app-950 text-app-interactive hover:text-app-interactive-active hover:border-app-channel'
                       )}
                     >
                       <Icon size={22} />
@@ -384,7 +384,7 @@ export default function ChannelSidebar() {
               </div>
             </form>
 
-            <div className="bg-[#2b2d31] px-6 py-4 flex justify-end gap-2">
+            <div className="bg-app-850 px-6 py-4 flex justify-end gap-2">
               <button type="button" onClick={() => setShowCreate(false)} className="px-4 py-2 text-app-interactive-active text-sm hover:underline press-feedback">Cancel</button>
               <button
                 onClick={submitCreate}

@@ -21,112 +21,127 @@
   --app-row-gap: 1rem;
   --app-row-pad-y: 2px;
 
-  /* Brand defaults — original colors (override per theme below) */
-  --app-brand:        90  120 220;   /* dusk indigo (#5a78dc) — distinctly not Blurple #5865f2 */
-  --app-brand-hover:  74  100 196;
-  --app-brand-active: 60  85  170;
+  /* Brand / accent — refined graphite. Monochrome by design: a confident
+     mid-gray that keeps white button text readable while staying within a
+     strict black / white / dark-gray palette. */
+  --app-brand:        99  102 110;   /* graphite (#63666e) */
+  --app-brand-hover:  118 122 132;
+  --app-brand-active: 138 142 152;
 
-  --app-link:    61 175 207;   /* muted cyan, not Discord link */
-  --app-success: 60 168 110;
-  --app-success-dark: 32  98  60;
-  --app-warning: 232 178  64;
-  --app-danger:  228  82  82;
+  /* Functional tokens are monochrome too. Danger keeps a single restrained,
+     desaturated red so destructive actions stay legible — the only hue in
+     the system (a standard professional pattern). */
+  --app-link:    198 202 212;   /* near-white link */
+  --app-success: 63 167 110;    /* refined green — positive / online only */
+  --app-success-dark: 34  96  64;
+  --app-warning: 150 153 161;   /* monochrome */
+  --app-danger:  196  96  96;   /* muted brick red — destructive only */
 
-  --app-presence-online:  60 168 110;
-  --app-presence-idle:    232 178  64;
-  --app-presence-dnd:     228  82  82;
-  --app-presence-offline: 130 134 142;
+  --app-presence-online:  63 167 110;   /* green — the only "live" signal */
+  --app-presence-idle:    144 147 155;  /* gray */
+  --app-presence-dnd:     196  96  96;   /* red */
+  --app-presence-offline: 94  97  104;   /* gray */
 }
 
-/* DARK (default) — original dark palette, warmer than Discord's */
+/* DARK (default) — neutral charcoal. Pure grayscale surfaces, no color cast. */
 :root,
 [data-theme="dark"] {
-  --app-surface-950: 22 23 28;
-  --app-surface-900: 32 34 42;
-  --app-surface-850: 38 40 49;
-  --app-surface-800: 44 46 56;
-  --app-surface-secondary-alt: 36 38 47;
-  --app-surface-floating: 16 17 21;
-  --app-surface-700: 58 61 73;
-  --app-surface-600: 68 71 84;
+  --app-surface-950: 13 13 14;    /* server rail / app background — near black */
+  --app-surface-900: 21 21 23;    /* channel sidebar */
+  --app-surface-850: 27 27 29;    /* raised panels, modal footers */
+  --app-surface-800: 31 31 33;    /* chat area — primary surface */
+  --app-surface-secondary-alt: 25 25 27;
+  --app-surface-floating: 9 9 10; /* popovers, menus, tooltips */
+  --app-surface-700: 44 44 47;    /* inputs, hover fills */
+  --app-surface-600: 60 60 64;    /* raised controls */
 
-  --app-text-strong: 235 237 242;
-  --app-text-soft:   182 187 196;
-  --app-text:        220 223 230;
-  --app-interactive: 175 181 192;
-  --app-interactive-hover:  220 223 230;
+  --app-text-strong: 244 244 246;
+  --app-text-soft:   174 176 182;
+  --app-text:        222 223 228;
+  --app-interactive: 166 168 174;
+  --app-interactive-hover:  226 227 231;
   --app-interactive-active: 255 255 255;
-  --app-muted:   145 152 165;
-  --app-channel: 130 138 152;
-  --app-divider: 60 64 76;
+  --app-muted:   134 136 144;
+  --app-channel: 124 126 134;
+  --app-divider: 42 42 46;
 }
 
-/* NEAR-BLACK — OLED / power-saving mode */
+/* NEAR-BLACK — OLED / power-saving mode. Pure black surfaces. */
 [data-theme="near-black"] {
   --app-surface-950: 0 0 0;
-  --app-surface-900: 8 9 12;
-  --app-surface-850: 12 13 17;
-  --app-surface-800: 16 18 22;
-  --app-surface-secondary-alt: 12 13 17;
+  --app-surface-900: 10 10 11;
+  --app-surface-850: 14 14 15;
+  --app-surface-800: 18 18 19;
+  --app-surface-secondary-alt: 13 13 14;
   --app-surface-floating: 0 0 0;
-  --app-surface-700: 28 30 36;
-  --app-surface-600: 40 42 48;
+  --app-surface-700: 30 30 32;
+  --app-surface-600: 44 44 47;
 
-  --app-text-strong: 240 240 244;
-  --app-text-soft:   180 184 192;
-  --app-text:        220 220 224;
-  --app-interactive: 170 175 184;
-  --app-interactive-hover:  220 220 224;
+  --app-text-strong: 242 242 244;
+  --app-text-soft:   178 180 186;
+  --app-text:        220 221 225;
+  --app-interactive: 168 170 176;
+  --app-interactive-hover:  222 223 227;
   --app-interactive-active: 255 255 255;
-  --app-muted:   140 145 155;
-  --app-channel: 124 130 142;
-  --app-divider: 28 30 36;
+  --app-muted:   136 138 146;
+  --app-channel: 124 126 134;
+  --app-divider: 26 26 28;
 }
 
-/* SOFT-GRAY — mid-dark neutral */
+/* SOFT-GRAY — mid-dark neutral gray */
 [data-theme="soft-gray"] {
-  --app-surface-950: 42 45 52;
-  --app-surface-900: 54 58 66;
-  --app-surface-850: 60 64 72;
-  --app-surface-800: 66 70 80;
-  --app-surface-secondary-alt: 58 62 70;
-  --app-surface-floating: 34 36 42;
-  --app-surface-700: 82 88 100;
-  --app-surface-600: 96 102 116;
+  --app-surface-950: 40 41 44;
+  --app-surface-900: 52 53 57;
+  --app-surface-850: 58 59 63;
+  --app-surface-800: 64 65 70;
+  --app-surface-secondary-alt: 56 57 61;
+  --app-surface-floating: 32 33 36;
+  --app-surface-700: 80 82 88;
+  --app-surface-600: 96 98 104;
 
-  --app-text-strong: 240 242 246;
-  --app-text-soft:   200 206 216;
-  --app-text:        228 232 238;
-  --app-interactive: 195 200 210;
-  --app-interactive-hover:  228 232 238;
+  --app-text-strong: 242 243 246;
+  --app-text-soft:   200 202 208;
+  --app-text:        226 228 232;
+  --app-interactive: 194 196 202;
+  --app-interactive-hover:  226 228 232;
   --app-interactive-active: 255 255 255;
-  --app-muted:   162 170 182;
-  --app-channel: 150 158 172;
-  --app-divider: 92 98 110;
+  --app-muted:   158 160 168;
+  --app-channel: 148 150 158;
+  --app-divider: 88 90 96;
 }
 
-/* LIGHT */
+/* LIGHT — clean white & light gray */
 [data-theme="light"] {
-  --app-surface-950: 232 234 240;   /* server rail */
-  --app-surface-900: 244 246 250;   /* channel sidebar */
-  --app-surface-850: 248 249 252;
+  --app-surface-950: 229 229 232;   /* server rail */
+  --app-surface-900: 243 243 245;   /* channel sidebar */
+  --app-surface-850: 247 247 249;
   --app-surface-800: 255 255 255;   /* chat area */
-  --app-surface-secondary-alt: 240 242 246;
+  --app-surface-secondary-alt: 239 239 242;
   --app-surface-floating: 255 255 255;
-  --app-surface-700: 222 226 234;
-  --app-surface-600: 210 214 224;
+  --app-surface-700: 223 223 227;
+  --app-surface-600: 209 209 214;
 
-  --app-text-strong: 27 31 40;
-  --app-text-soft:   77 86 102;
-  --app-text:        45 52 64;
-  --app-interactive: 77 86 102;
-  --app-interactive-hover:  27 31 40;
-  --app-interactive-active: 12 14 20;
-  --app-muted:   118 128 144;
-  --app-channel: 108 118 134;
-  --app-divider: 220 224 232;
+  --app-text-strong: 22 22 25;
+  --app-text-soft:   82 84 90;
+  --app-text:        44 45 50;
+  --app-interactive: 82 84 90;
+  --app-interactive-hover:  22 22 25;
+  --app-interactive-active: 8 8 10;
+  --app-muted:   116 118 126;
+  --app-channel: 106 108 116;
+  --app-divider: 222 222 226;
 
-  --app-link:    32 130 175;
+  /* In light mode the accent and links read as dark gray, not graphite-on-white */
+  --app-brand:        58 60 66;
+  --app-brand-hover:  40 42 48;
+  --app-brand-active: 24 26 32;
+  --app-link:    60 64 72;
+  --app-success: 42 138 86;        /* slightly darker green for white bg */
+  --app-success-dark: 30 100 62;
+  --app-warning: 120 122 130;
+  --app-presence-online:  42 138 86;
+  --app-presence-idle:    150 152 160;
+  --app-presence-offline: 168 170 178;
 }
 
 html, body, #root { height: 100%; }
@@ -189,7 +204,7 @@ button:disabled { cursor: not-allowed; }
 .scrollbar-none::-webkit-scrollbar { display: none; }
 .scrollbar-none { scrollbar-width: none; }
 
-::selection { background: rgb(var(--app-brand) / 0.4); color: #fff; }
+::selection { background: rgb(var(--app-brand) / 0.30); }
 
 :focus { outline: none; }
 .ring-focus:focus-visible {

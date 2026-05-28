@@ -209,7 +209,7 @@ export default function ServerSidebar() {
               )}
             </form>
 
-            <div className="bg-[#2b2d31] px-6 py-4 flex justify-end gap-2">
+            <div className="bg-app-850 px-6 py-4 flex justify-end gap-2">
               <button
                 type="button"
                 onClick={() => setShowModal(false)}

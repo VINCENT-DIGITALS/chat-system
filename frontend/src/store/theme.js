@@ -13,7 +13,7 @@ const DEFAULTS = {
   msgMode: 'default',    // 'default' | 'compact'
   // Custom-theme controls (applied only when mode === 'custom')
   customBase: 'dark',    // 'light' | 'dark'
-  brand: '#5a78dc',      // accent / primary
+  brand: '#63666e',      // accent / primary — graphite (monochrome default)
   gradient: [],          // up to 5 hex colors for an optional background gradient
 };
 

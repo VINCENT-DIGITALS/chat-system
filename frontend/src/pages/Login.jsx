@@ -27,10 +27,10 @@ export default function Login() {
       className="min-h-[100dvh] flex items-center justify-center bg-app-950 p-4"
       style={{
         backgroundImage:
-          'radial-gradient(circle at 20% 20%, rgba(88,101,242,0.18), transparent 40%), radial-gradient(circle at 80% 60%, rgba(35,165,90,0.15), transparent 40%), radial-gradient(circle at 50% 100%, rgba(240,178,50,0.08), transparent 40%)',
+          'radial-gradient(circle at 20% 20%, rgba(255,255,255,0.06), transparent 42%), radial-gradient(circle at 80% 70%, rgba(255,255,255,0.04), transparent 42%)',
       }}
     >
-      <div className="w-full max-w-md bg-[#313338] rounded-md shadow-elevation-high p-6 sm:p-8 animate-modal-in">
+      <div className="w-full max-w-md bg-app-850 ring-1 ring-app-divider rounded-md shadow-elevation-high p-6 sm:p-8 animate-modal-in">
         <div className="text-center">
           <div className="w-12 h-12 mx-auto rounded-2xl bg-app-500 text-white flex items-center justify-center font-extrabold tracking-wider">
             {brand.app_short || 'CS'}
@@ -50,7 +50,7 @@ export default function Login() {
               autoFocus
               value={email}
               onChange={(e) => setEmail(e.target.value)}
-              className="w-full bg-[#1e1f22] border border-transparent focus:border-app-500 outline-none rounded px-3 py-2.5 text-app-interactive-active transition-colors"
+              className="w-full bg-app-950 border border-app-divider focus:border-app-500 outline-none rounded px-3 py-2.5 text-app-interactive-active transition-colors"
             />
           </div>
           <div>
@@ -62,7 +62,7 @@ export default function Login() {
               required
               value={password}
               onChange={(e) => setPassword(e.target.value)}
-              className="w-full bg-[#1e1f22] border border-transparent focus:border-app-500 outline-none rounded px-3 py-2.5 text-app-interactive-active transition-colors"
+              className="w-full bg-app-950 border border-app-divider focus:border-app-500 outline-none rounded px-3 py-2.5 text-app-interactive-active transition-colors"
             />
             <button
               type="button"

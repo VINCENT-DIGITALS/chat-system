@@ -162,7 +162,7 @@ export default function MessageInput({ channelId, conversationId, placeholder, o
 
       {/* Attachment preview row */}
       {pending.length > 0 && (
-        <div className="bg-[#383a40] rounded-t-lg px-4 py-3 border-b border-app-900 flex gap-3 flex-wrap">
+        <div className="bg-app-700 rounded-t-lg px-4 py-3 border-b border-app-900 flex gap-3 flex-wrap">
           {pending.map((a, idx) => (
             <div key={idx} className="relative group bg-app-secondary-alt rounded p-2 w-[180px]">
               <button
@@ -196,7 +196,7 @@ export default function MessageInput({ channelId, conversationId, placeholder, o
 
       <div
         className={
-          'bg-[#383a40] flex items-end px-3 py-2.5 gap-2 transition-shadow duration-100 ' +
+          'bg-app-700 flex items-end px-3 py-2.5 gap-2 transition-shadow duration-100 ' +
           (pending.length > 0 ? 'rounded-b-lg' : 'rounded-lg') + ' ' +
           (focused ? 'shadow-focus-brand' : 'shadow-ring')
         }

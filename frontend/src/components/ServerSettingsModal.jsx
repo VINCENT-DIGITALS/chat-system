@@ -127,7 +127,7 @@ function RolesTab({ server }) {
   const [members, setMembers] = useState([]);
   const [selected, setSelected] = useState(null);
   const [name, setName] = useState('');
-  const [color, setColor] = useState('#7a9bff');
+  const [color, setColor] = useState('#646770');
   const [permBits, setPermBits] = useState(0n);
 
   async function refresh() {
@@ -147,7 +147,7 @@ function RolesTab({ server }) {
       name, color, permissions: permBits.toString(), hoist: false, mentionable: false,
     });
     setName('');
-    setColor('#7a9bff');
+    setColor('#646770');
     setPermBits(0n);
     refresh();
   }

@@ -46,7 +46,7 @@ function VoiceLayout({ channelName, onLeave }) {
                   key={p.identity}
                   className={
                     'aspect-square rounded-lg bg-app-900 flex flex-col items-center justify-center text-center px-3 py-4 ring-1 ring-black/20 relative transition-shadow ' +
-                    (p.isSpeaking ? 'shadow-[0_0_0_2px_#23a55a]' : '')
+                    (p.isSpeaking ? 'shadow-[0_0_0_2px_#3fa76e]' : '')
                   }
                 >
                   <div className="w-16 h-16 rounded-full bg-app-500 text-white flex items-center justify-center font-extrabold text-xl tracking-tight">

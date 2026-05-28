@@ -186,7 +186,7 @@ function AccountSection({ user, onChanged, toast }) {
 
       {/* Banner card */}
       <div className="rounded-lg overflow-hidden bg-app-900">
-        <div className="h-[100px]" style={{ backgroundColor: user.banner_color || '#5865f2' }} />
+        <div className="h-[100px]" style={{ backgroundColor: user.banner_color || '#3a3c42' }} />
         <div className="p-4 flex items-center gap-4 -mt-[40px]">
           <div className="rounded-full ring-[6px] ring-app-900">
             <Avatar name={user.display_name || user.username} src={user.avatar_url} size={80} />
@@ -281,7 +281,7 @@ function ProfileSection({ user, onChanged, toast }) {
   const [displayName, setDisplayName] = useState(user.display_name || '');
   const [pronouns, setPronouns] = useState(user.pronouns || '');
   const [bio, setBio] = useState(user.bio || '');
-  const [bannerColor, setBannerColor] = useState(user.banner_color || '#5865f2');
+  const [bannerColor, setBannerColor] = useState(user.banner_color || '#3a3c42');
   const [savingProfile, setSavingProfile] = useState(false);
   const [uploadingAvatar, setUploadingAvatar] = useState(false);
   const fileRef = useRef(null);
@@ -453,7 +453,7 @@ function ProfileSection({ user, onChanged, toast }) {
         <div className="fixed bottom-6 left-1/2 -translate-x-1/2 z-[60] bg-app-secondary-alt shadow-elevation rounded-lg flex items-center gap-3 pl-4 pr-2 py-2 animate-msg-in">
           <span className="text-sm text-app-interactive-active">Careful — you have unsaved changes!</span>
           <button
-            onClick={() => { setDisplayName(user.display_name || ''); setPronouns(user.pronouns || ''); setBio(user.bio || ''); setBannerColor(user.banner_color || '#5865f2'); }}
+            onClick={() => { setDisplayName(user.display_name || ''); setPronouns(user.pronouns || ''); setBio(user.bio || ''); setBannerColor(user.banner_color || '#3a3c42'); }}
             className="text-sm text-app-interactive-active hover:underline px-2 py-1.5"
           >Reset</button>
           <button
@@ -471,12 +471,12 @@ function ProfileSection({ user, onChanged, toast }) {
 function AppearanceSection() {
   const theme = useThemeStore();
   const themeOptions = [
-    { id: 'light',      label: 'Light',        sample: ['#f4f6fa', '#e8eaf0'] },
-    { id: 'soft-gray',  label: 'Soft Gray',    sample: ['#3c4048', '#2a2d34'] },
-    { id: 'dark',       label: 'Dark',         sample: ['#2c2e38', '#16171c'] },
-    { id: 'near-black', label: 'Near Black',   sample: ['#10121a', '#000000'] },
-    { id: 'system',     label: 'Sync w/ OS',   sample: ['#f4f6fa', '#16171c'] },
-    { id: 'custom',     label: 'Custom',       sample: ['#5a78dc', '#22c1c3'] },
+    { id: 'light',      label: 'Light',        sample: ['#ffffff', '#e5e5e8'] },
+    { id: 'soft-gray',  label: 'Soft Gray',    sample: ['#40414c', '#28292c'] },
+    { id: 'dark',       label: 'Dark',         sample: ['#1f1f21', '#0d0d0e'] },
+    { id: 'near-black', label: 'Near Black',   sample: ['#101011', '#000000'] },
+    { id: 'system',     label: 'Sync w/ OS',   sample: ['#ffffff', '#0d0d0e'] },
+    { id: 'custom',     label: 'Custom',       sample: ['#646770', '#2f3136'] },
   ];
 
   return (
@@ -591,7 +591,7 @@ function GradientEditor({ value, onChange }) {
   const list = Array.isArray(value) ? value : [];
   function addColor() {
     if (list.length >= 5) return;
-    onChange([...list, '#7a9bff']);
+    onChange([...list, '#646770']);
   }
   function setAt(i, color) {
     const next = [...list];
